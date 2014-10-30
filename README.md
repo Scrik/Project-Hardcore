@@ -39,6 +39,6 @@ Hardcore gameplay focused modpack for Minecraft 1.7.x
 
 
 
-###Important for using configs and scripts
+###Important notes
 * All configs and scripts available for public so you can use them.
-* WARNING! I hold no responsibility if it will break something in your world!
+* WARNING! For informational purposes only. I hold no responsibility if something in your world will damaged!
