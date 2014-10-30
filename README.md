@@ -1,10 +1,9 @@
 Project Hardcore
 ================
-
 Harcore gameplay focused modpack for Minecraft 1.7.x
 
-###ModList:
 
+###ModList:
 * BetterFonts, orig. by thvortex - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1282644-1-4-4-betterfonts-truetype-opentype-font-support
 * Advanced Solar Panels, by SeNtiMeL - http://forum.industrial-craft.net/index.php?page=Thread&threadID=3291
 * Applied Energistics 2, by AlgorithmX - http://ae2.ae-mod.info/
@@ -38,7 +37,7 @@ Harcore gameplay focused modpack for Minecraft 1.7.x
 * Waila Harvestability, by squeek502 - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1295067-waila-harvestability-how-can-i-harvest-what-im
 
 
-###Important for using configs and scripts
 
+###Important for using configs and scripts
 * All configs and scripts available for public so you can use them.
 * WARNING! I hold no responsibility if it will break something in your world!
