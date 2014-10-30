@@ -16,6 +16,15 @@ Harcore gameplay focused modpack for Minecraft 1.7.x
 * Code Chicken Core, by Chickenbones - http://chickenbones.net
 * EnderIO, by CrazyPants - http://enderio.com/
 * Ender Storage, by Chickenbones - http://chickenbones.net
-
-
-
+* EnetBridge, by Player - http://forum.industrial-craft.net/index.php?page=Thread&threadID=10864
+* ExtraCells 2, by Leonelf - http://www.minecraftforum.net/topic/1801643-
+* Forestry, orig. by SirSengir - http://forestry.sengir.net
+* Gravestone, by NightKosh - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1288082-gravestone-mod-v2-10-1
+* GregTech by GregoriusT - http://forum.industrial-craft.net/index.php?page=Thread&threadID=7156
+* IndustrialCraft 2 Combo Armors, by Zuxelus ; orig. by UnixRano - https://bitbucket.org/Zuxelus/ic2-combo-armors
+* Industrial Craft 2, by IC2Team - http://forum.industrial-craft.net
+* Infernal Mobs, by AtomicStryker - http://atomicstryker.net/infernalmobs.php
+* Iron Chest, by cpw - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1280827-1-5-and-up-forge-universal-ironchests-5-0
+* JourneyMap, by techbrew - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1278348-journeymap-5-0-0-realtime-mapping-in-game-or-in-a
+* MineTweaker 3 by StanH - http://minetweaker3.powerofbytes.com
+* NEI Addons by bdew - http://bdew.net/neiaddons/
