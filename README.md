@@ -12,7 +12,7 @@ Hardcore gameplay focused modpack for Minecraft 1.7.x
 * BuildCraft NextGen, by BuildCraft team - http://www.mod-buildcraft.com/
 * Carpenter's Blocks, by Mineshopper - http://www.carpentersblocks.com/
 * Code Chicken Core, by Chickenbones - http://chickenbones.net
-* Chisel, by Pokefenn; orig. by AUTOMATIC_MAIDEN - http://minecraft.curseforge.com/mc-mods/224329-chisel-1-7
+* Chisel 2, by TheCricket26; orig. by AUTOMATIC_MAIDEN - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2254671-chisel-2
 * Code Chicken Core, by Chickenbones - http://chickenbones.net
 * EnderIO, by CrazyPants - http://enderio.com
 * Ender Storage, by Chickenbones - http://chickenbones.net
