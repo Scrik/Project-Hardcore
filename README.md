@@ -40,7 +40,7 @@ Hardcore gameplay focused modpack for Minecraft 1.7.x
 
 ###Credits
 * JasonMcRay, for the overall concept - https://github.com/JasonMcRay
-* satanicsanta, mt3 samples, https://github.com/satanicsanta
+* satanicsanta, for mt3 samples, https://github.com/satanicsanta
 
 ###Important notes
 * All configs and scripts available for public so you can use them.
