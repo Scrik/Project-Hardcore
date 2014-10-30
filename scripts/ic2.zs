@@ -1,3 +1,4 @@
+# Created by Dark Legacy
 # Aliases
 var wireCopper = <ore:craftingWireCopper>;
 var cropnalyzer = <IC2:itemCropnalyzer>;

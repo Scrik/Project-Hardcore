@@ -1,3 +1,4 @@
+# Created by Dark Legacy
 import mods.nei.NEI;
 
 # Aliases
@@ -85,6 +86,7 @@ var EIOBasicFilterUpgrade = <EnderIO:itemBasicFilterUpgrade>;
 var EIOBasicFilterUpgrade1 = <EnderIO:itemBasicFilterUpgrade:1>;
 var paper = <minecraft:paper>;
 var redstone = <minecraft:redstone>;
+var EIODarkSteelAnvil = <EnderIO:blockDarkSteelAnvil>;
 
 # Items/Blocks Change
 recipes.remove(EIOGearStone);
@@ -286,6 +288,9 @@ recipes.addShaped(EIOBasicCapacitor, [
 	[null, <ore:plateGold>, ingotRedAlloy],
 	[<ore:plateGold>, <ore:plateCopper>, <ore:plateGold>],
 	[ingotRedAlloy, <ore:plateGold>, null]]);
-		
-	
-	
+
+recipes.remove(EIODarkSteelAnvil);
+recipes.addShaped(EIODarkSteelAnvil, [
+	[<ore:blockSteel>, <ore:blockSteel>, <ore:blockSteel>],
+	[null, ingotSteel, null],
+	[ingotSteel, ingotSteel, ingotSteel]]);

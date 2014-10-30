@@ -1,3 +1,4 @@
+# Created by Dark Legacy
 #import mods.ic2.Compressor;
 
 # Aliases
