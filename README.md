@@ -1,6 +1,6 @@
 Project Hardcore
 ================
-Harcore gameplay focused modpack for Minecraft 1.7.x
+Hardcore gameplay focused modpack for Minecraft 1.7.x
 
 
 ###ModList:
@@ -14,7 +14,7 @@ Harcore gameplay focused modpack for Minecraft 1.7.x
 * Code Chicken Core, by Chickenbones - http://chickenbones.net
 * Chisel, by Pokefenn; orig. by AUTOMATIC_MAIDEN - http://minecraft.curseforge.com/mc-mods/224329-chisel-1-7
 * Code Chicken Core, by Chickenbones - http://chickenbones.net
-* EnderIO, by CrazyPants - http://enderio.com/
+* EnderIO, by CrazyPants - http://enderio.com
 * Ender Storage, by Chickenbones - http://chickenbones.net
 * EnetBridge, by Player - http://forum.industrial-craft.net/index.php?page=Thread&threadID=10864
 * ExtraCells 2, by Leonelf - http://www.minecraftforum.net/topic/1801643-
