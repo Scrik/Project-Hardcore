@@ -38,6 +38,9 @@ Hardcore gameplay focused modpack for Minecraft 1.7.x
 * Waila Harvestability, by squeek502 - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1295067-waila-harvestability-how-can-i-harvest-what-im
 
 
+###Credits
+* JasonMcRay, for the overall concept - https://github.com/JasonMcRay
+* satanicsanta, mt3 samples, https://github.com/satanicsanta
 
 ###Important notes
 * All configs and scripts available for public so you can use them.
