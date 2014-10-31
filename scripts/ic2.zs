@@ -14,6 +14,8 @@ var plateCopper = <ore:plateCopper>;
 var plateGold = <ore:plateGold>;
 var plateIron = <ore:plateIron>;
 var plateTin = <ore:plateTin>;
+var GtSolarPanel = <gregtech:gt.metaitem.01:32750>;
+var ic2SolarPanel = <IC2:blockGenerator:3>;
 
 # Recipe Fixes
 recipes.remove(ic2Cable1);
@@ -33,5 +35,7 @@ recipes.addShaped(cropnalyzer, [
     [wireCopper, wireCopper, null],
     [plateRedAlloy, glass, plateRedAlloy],
     [plateRedAlloy, circuitBasic, plateRedAlloy]]);
-    
 
+recipes.remove(ic2SolarPanel);
+recipes.addShaped(ic2SolarPanel, [[GtSolarPanel]]);
+recipes.addShaped(GtSolarPanel, [[ic2SolarPanel]]);
