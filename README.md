@@ -19,6 +19,7 @@ Hardcore gameplay focused modpack for Minecraft 1.7.x
 * EnetBridge, by Player - http://forum.industrial-craft.net/index.php?page=Thread&threadID=10864
 * ExtraCells 2, by Leonelf - http://www.minecraftforum.net/topic/1801643-
 * Forestry, orig. by SirSengir - http://forestry.sengir.net
+* Gendustry, by BDew - http://bdew.net
 * Gravestone, by NightKosh - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1288082-gravestone-mod-v2-10-1
 * Gravitation Suite, by SeNtiMeL - http://forum.industrial-craft.net/index.php?page=Thread&threadID=6915
 * GregTech by GregoriusT - http://forum.industrial-craft.net/index.php?page=Thread&threadID=7156
