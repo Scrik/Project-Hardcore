@@ -74,7 +74,17 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:vat", recipe);
       <output>
         <fluidStack name="fire_water"/>        
       </output>
-      
+</recipe>
+
+    <recipe name="Fuel" energyCost="10000">
+      <input>
+      <itemStack oreDictionary="dustStone" slot="0" multiplier="1"/>
+      <itemStack oreDictionary="dustStone" slot="1" multiplier="1"/>
+      <fluidStack name="oil" multiplier="1"/>  
+      </input>      
+      <output>
+        <fluidStack name="fuel"/>        
+      </output>
     </recipe>
    
   </recipeGroup>
