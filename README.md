@@ -36,6 +36,7 @@ Hardcore gameplay focused modpack for Minecraft 1.7.x
 * OptiFIne, by sp614x - https://optifine.net/
 * Project:Red by MrTJP, Chickenbones - http://projectredwiki.com
 * Roguelike Dungeons, by Greymerk - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1290238-roguelike-dungeons-v1-3-5
+* Special Mobs, by Father Toast - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1282771-forge-father-toasts-mods-special-mobs-mob
 * Waila, by ProfMobius - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1289765-waila-1-5-2
 * Waila Harvestability, by squeek502 - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1295067-waila-harvestability-how-can-i-harvest-what-im
 
