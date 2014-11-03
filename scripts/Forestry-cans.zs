@@ -1,16 +1,11 @@
 # Created by Dark Legacy
-#import mods.ic2.Compressor;
-
 # Aliases
-var itemCasing = <IC2:itemCasing:1>;
-var glassPane = <minecraft:glass_pane>;
+var plateTin = <ore:plateTin>;
 
-#Can reciepe change
+#Can recipe change
 recipes.remove(<Forestry:canEmpty>);
-recipes.addShaped(<Forestry:canEmpty>, [
-[null, itemCasing, null],
-[itemCasing, glassPane, itemCasing],
-[null, itemCasing, null]]);
+recipes.addShaped(<Forestry:canEmpty> * 3, [
+[null, plateTin, null],
+[plateTin, null, plateTin]]);
 
 recipes.remove(<Forestry:waxCapsule>);
-#Compressor.addRecipe(<Forestry:waxCapsule>, <Forestry:beeswax> * 4);

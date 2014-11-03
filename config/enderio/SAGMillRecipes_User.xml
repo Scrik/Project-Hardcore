@@ -1,97 +1,5 @@
-<!-- Edited by Dark Legacy -->
-<!--
-
-  IMPORTANT:
-  This is the core recipe file. Modifiyig this file may cause Ender IO to function incorrectly.
-  This file may be rewritten by EnderIO and all modifications made to it will be lost. To add
-  or modify recipes please use 'SagMillRecipes_User.xml'
-
-  Recipes are organised into named groups. A group of recipes can be disabled by setting the attribiute 'enabled=false'.
-  A recipe group is composed of one or more recipes.
-
-  Examples:
-  <recipeGroup name="EnderIO">
-  <recipe>...</recipe>
-  <recipe>...</recipe>
-  <recipeGroup/>
-
-  <recipeGroup name="EnderIO" enabled="false">
-  <recipe>...</recipe>
-  <recipe>...</recipe>
-  <recipeGroup/>
-
-
-  Each recipe must be named and contains one or more input item stack definition and one or more output stack definitions.
-  For each input, all outputs are produced.
-  A recipe may also define the amount of energy used to complete it. The default value used is 4000 RF. A typical
-  value for an ingot to dust recipe is 2400 RF.
-
-  Examples:
-  <recipe name="Blah">
-  <input> <itemStack/> </input>
-  <output> <itemStack/> </output>
-  </recipe>
-
-  <recipe name="BlahBlah" energyCost="2400">
-  <input> <itemStack/> </input>
-  <output> <itemStack/> </output>
-  <output> <itemStack/> </output>
-  </recipe>
-
-
-  Valid input item definitions:
-  - Must have either: modID + itemName or oreDictionary
-  - 'modID' is the identifier registered by the mod with Forge (for example vanilla blocks use 'minecraft' while Ender IO is 'EnderIO').
-  This value can be found in the details panel of Forge's 'mods' UI.
-  - 'itemName' the name used to register the block/item with forge. To dump all registered items to config/modObjectsRegistery.txt
-  include: <dumpRegistry modObjects="true/>
-  - 'oreDictionary' will use the OreDictionary to find the appropriate itemStack. The first entry returned by the dictionary
-  will be used. The dump the contents of the dictionary to config/oreDictionaryRegistery.txt include <dumpRegistery oreDictionary="true"/>
-  - The item metadata/damage may optionally be specified for all types except
-  oreDictionary. If a '*' is used for the metadata value then meta data will ignored when determining if an input is valid.
-
-  Examples:
-
-  <itemStack modID="" itemName="" />
-  <itemStack modID="" itemName="" itemMeta="" />
-  <itemStack oreDictionary="" />
-
-  Valid output definitions:
-  - As per inputs with the additional optional fields, number and chance (both default to 1)
-  - 'number' is the number of output items for each input
-  - 'chance' is the chance the output will be crafted. Values are clamped between 0 - 1.
-  For example, a chance of 0.25 will result, on average, one of these outputs
-  being crafted for each 4 inputs processed by the SAG Mill.
-
-  Examples:
-  <itemStack modID="minecraft" itemName="sand"/>
-  <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="6" />
-  <itemStack modID="minecraft" itemName="cobblestone" chance="0.15"/>
-  <itemStack oreDictionary="dustNickel" number="1" chance="0.1" />   
-  <itemStack modID="BiomesOPlenty" itemName="bop.bones" itemMeta="0" number="4" chance="0.1"/>
-
-Recipes can also be added using forge IMC messages. For example, in the init method of a mod:
-
-String recipe = 
-       "<recipeGroup name=\"cheaty\">" +
-         "<recipe name=\"foo\" energyCost=\"2400\">" +
-           "<input>" +
-            "<itemStack modID=\"minecraft\" itemName=\"dirt\"/>" +
-           "</input>" +
-           "<output>" +
-            "<itemStack modID=\"minecraft\" itemName=\"diamond\"/>" +
-           "</output>" +
-          "</recipe>" +
-        "</recipeGroup>";
-FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe); 
-
--->
-
 <SAGMillRecipes>
-
-  <!-- <dumpRegistery oreDictionary="true" modObjects="true" /> -->
-
-  <recipeGroup name="EnderIO"> <!-- Required for EnderIO to function correctly. -->
+<recipeGroup name="EnderIO"> <!-- Required for EnderIO to function correctly. -->
 
     <recipe name="CoalOre" energyCost="3600">
       <input>
@@ -99,42 +7,42 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
       </input>
       <output>        
         <itemStack oreDictionary="dustCoal"/>
-        <itemStack oreDictionary="dustThorium" chance="0.05"/>        
+        <itemStack oreDictionary="dustLignite" chance="0.05"/>       
       </output>
     </recipe>
 
-    <recipe name="Coal" energyCost="3600">
+    <recipe name="Coal" energyCost="2400">
       <input>
         <itemStack modID="minecraft" itemName="coal"/>
       </input>
       <output>
-        <itemStack oreDictionary="dustCoal"/>
+       <itemStack oreDictionary="dustCoal"/>
       </output>
     </recipe>
 
     <recipe name="IronOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreIron"/>
+        <itemStack oreDictionary="oreIron" />
       </input>
       <output>
         <itemStack oreDictionary="dustIron"/>      
         <itemStack oreDictionary="dustIron" chance="0.9"/>      
-        <itemStack oreDictionary="dustNickel" chance="0.05"/>      
+        <itemStack oreDictionary="dustNickel" chance="0.05"/>
       </output>
     </recipe>
 
     <recipe name="IronIngot" energyCost="2400">
       <input>          
-        <itemStack oreDictionary="ingotIron"/>
+        <itemStack oreDictionary="ingotIron" />
       </input>
       <output>
-        <itemStack oreDictionary="dustIron"/>
+        <itemStack oreDictionary="dustIron"/> 
       </output>
     </recipe>
 
     <recipe name="GoldOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreGold"/>
+        <itemStack oreDictionary="oreGold" />
       </input>
       <output>
         <itemStack oreDictionary="dustGold"/>      
@@ -145,14 +53,14 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
 
     <recipe name="GoldIngot" energyCost="2400">
       <input>
-        <itemStack oreDictionary="ingotGold"/>
+        <itemStack oreDictionary="ingotGold" />
       </input>
       <output>
-        <itemStack oreDictionary="dustGold"/>
+        <itemStack oreDictionary="dustGold"/> 
       </output>
     </recipe>
 
-    <recipe name="EnderPearl" energyCost="3600">
+    <recipe name="EnderPearl" energyCost="1600">
       <input>
         <itemStack modID="minecraft" itemName="ender_pearl"/>
       </input>
@@ -165,44 +73,71 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
 
   <recipeGroup name="Vanilla">
 
-    <recipe name="Stone" energyCost="3600">
+    <recipe name="Strone Bricks" energyCost="2400">
       <input>
-        <itemStack modID="minecraft" itemName="stone"/>        
+        <itemStack modID="minecraft" itemName="stonebrick"/>
       </input>
       <output>
-        <itemStack modID="minecraft" itemName="cobblestone"/>
+        <itemStack modID="minecraft" itemName="cobblestone" number="4"/>
+      </output>
+    </recipe>
+    
+    <recipe name="CrackedBricks" energyCost="1200">
+      <input>
+      <itemStack modID="minecraft" itemName="stonebrick" itemMeta="2"/>        
+      </input>
+      <output>
+        <itemStack modID="minecraft" itemName="cobblestone" number="2"/>
+      </output>
+    </recipe>
+    
+    <recipe name="ChisledBricks" energyCost="3600">
+      <input>
+        <itemStack modID="minecraft" itemName="stonebrick" itemMeta="3"/>
+      </input>
+      <output>
+        <itemStack modID="minecraft" itemName="cobblestone" number="4"/>
       </output>
     </recipe>
 
-    <recipe name="Cobblestone" energyCost="3600">
+    <recipe name="Stone" energyCost="2400">
       <input>
-        <itemStack modID="minecraft" itemName="cobblestone"/>
+        <itemStack modID="minecraft" itemName="stone" />        
+      </input>
+      <output>
+        <itemStack modID="minecraft" itemName="cobblestone" />
+      </output>
+    </recipe>
+
+    <recipe name="Cobblestone" energyCost="2400">
+      <input>
+        <itemStack modID="minecraft" itemName="cobblestone" />
       </input>
       <output>
         <itemStack modID="minecraft" itemName="sand"/>
       </output>
     </recipe>
 
-    <recipe name="Sandstone" energyCost="3600">
+    <recipe name="Sandstone" energyCost="2400">
       <input>
         <itemStack modID="minecraft" itemName="sandstone"/>
       </input>
       <output>
-        <itemStack modID="minecraft" itemName="sand"/>       
+        <itemStack modID="minecraft" itemName="sand" number="2"/>
       </output>
     </recipe>
 
 
-    <recipe name="Glass" energyCost="3600">
+    <recipe name="Glass" energyCost="1200">
       <input>
-        <itemStack oreDictionary="glass"/>         
+        <itemStack oreDictionary="glass" />         
       </input>
       <output>
         <itemStack modID="minecraft" itemName="sand"/>
       </output>
     </recipe>
 
-    <recipe name="Gravel" energyCost="3600">
+    <recipe name="Gravel" energyCost="2400">
       <input>
         <itemStack modID="minecraft" itemName="gravel"/>
       </input>
@@ -211,7 +146,7 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
       </output>
     </recipe>
 
-    <recipe name="Netherrack" energyCost="3600">
+    <recipe name="Netherrack" energyCost="2400">
       <input>      
         <itemStack modID="minecraft" itemName="netherrack"/>
       </input>
@@ -220,48 +155,47 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
       </output>
     </recipe>
 
-    <recipe name="BlazeRod" energyCost="3600">
+    <recipe name="BlazeRod" energyCost="2400">
       <input>
         <itemStack modID="minecraft" itemName="blaze_rod"/>
       </input>
       <output>
-        <itemStack modID="minecraft" itemName="blaze_powder" number="2"/>        
+ <itemStack modID="minecraft" itemName="blaze_powder" number="2"/>
       </output>
     </recipe>
 
-    <recipe name="GlowStone" energyCost="3600">
+    <recipe name="GlowStone" energyCost="2400">
       <input>      
         <itemStack modID="minecraft" itemName="glowstone" />
       </input>
       <output>      
         <itemStack modID="minecraft" itemName="glowstone_dust" number="3"/>
-        <itemStack modID="minecraft" itemName="glowstone_dust" number="1" chance="0.05"/>        
+        <itemStack modID="minecraft" itemName="glowstone_dust" number="1" chance="0.9"/>      
       </output>
     </recipe>
 
-    <recipe name="Bone" energyCost="3600">
+    <recipe name="Bone" energyCost="2400">
       <input>
         <itemStack modID="minecraft" itemName="bone" />
       </input>
       <output>
         <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="3" />
         <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="1" chance="0.9"/>
-        <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="2" chance="0.05"/>
+        <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="2" chance="0.05"/>        
       </output>
     </recipe>
 
-    <recipe name="ClayBlock" energyCost="3600">     
+    <recipe name="ClayBlock" energyCost="2400">     
       <input>
         <itemStack modID="minecraft" itemName="clay" />        
       </input>
       <output>      
-        <itemStack modID="minecraft" itemName="clay_ball" number="2"/>
-        <itemStack modID="minecraft" itemName="clay_ball" number="1" chance="0.1"/>        
-        <itemStack oreDictionary="dustSilicon" chance="0.05"/>
+        <itemStack modID="minecraft" itemName="clay_ball" number="2" />
+        <itemStack modID="minecraft" itemName="clay_ball" number="1" chance="0.1" />        
       </output>
     </recipe>
 
-    <recipe name="Wool" energyCost="3600">
+    <recipe name="Wool" energyCost="1200">
       <input>
         <itemStack modID="minecraft" itemName="wool" itemMeta="*"/>
       </input>
@@ -271,27 +205,27 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
       </output>
     </recipe>
 
-    <recipe name="Wheat" energyCost="3600">
+    <recipe name="Wheat" energyCost="800">
       <input>      
-        <itemStack modID="minecraft" itemName="wheat"/>        
+        <itemStack modID="minecraft" itemName="wheat" />        
       </input>
       <output>
-        <itemStack modID="minecraft" itemName="wheat_seeds" number="2"/>        
+        <itemStack oreDictionary="dustWheat"/>        
       </output>
     </recipe>
 
-    <recipe name="RedstoneOre" energyCost="3600">
+    <recipe name="RedstoneOre" energyCost="3000">
       <input>
-        <itemStack oreDictionary="oreRedstone"/>        
+        <itemStack modID="minecraft" itemName="redstone_ore" />        
       </input>
       <output>
-        <itemStack modID="minecraft" itemName="redstone" number="8"/>
+       <itemStack modID="minecraft" itemName="redstone" number="8"/>
         <itemStack modID="minecraft" itemName="redstone" number="1" chance="0.9"/>        
-        <itemStack oreDictionary="dustCinnabar" chance="0.05" />               
+        <itemStack oreDictionary="dustCinnabar" chance="0.05" />
       </output>
     </recipe>
     
-    <recipe name="DiamondOre" energyCost="3600">
+    <recipe name="DiamondOre" energyCost="3000">
       <input>
         <itemStack modID="minecraft" itemName="diamond_ore" />        
       </input>
@@ -301,27 +235,27 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
       </output>
     </recipe>
 
-    <recipe name="LapisLazuliOre" energyCost="3600">
+    <recipe name="LapisLazuliOre" energyCost="3000">
       <input>      
         <itemStack modID="minecraft" itemName="lapis_ore" />        
       </input>
       <output>
         <itemStack modID="minecraft" itemName="dye" itemMeta="4" number="6"/>
-        <itemStack modID="minecraft" itemName="dye" itemMeta="4" number="3" chance="0.05"/>        
+        <itemStack modID="minecraft" itemName="dye" itemMeta="4" number="3" chance="0.05"/>         
       </output>
     </recipe>
 
-    <recipe name="Quartz Ore" energyCost="3600">
+    <recipe name="Quartz Ore" energyCost="7200">
       <input>
-        <itemStack modID="minecraft" itemName="quartz_ore"/>    
+        <itemStack modID="minecraft" itemName="quartz_ore" />        
       </input>
       <output>
         <itemStack modID="minecraft" itemName="quartz" number="1"/>
-        <itemStack modID="minecraft" itemName="quartz" chance="0.9" />        
+        <itemStack modID="minecraft" itemName="quartz" chance="0.9" />     
       </output>
     </recipe>
 
-    <recipe name="Block of Quartz" energyCost="4800">
+    <recipe name="Block of Quartz" energyCost="2400">
       <input>
         <itemStack modID="minecraft" itemName="quartz_block" itemMeta="*"/>
       </input>
@@ -332,21 +266,23 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
     </recipe>
 
 
-    <recipe name="Quartz Stairs" energyCost="2400">
+    <recipe name="Quartz Stairs" energyCost="1200">
       <input>      
         <itemStack modID="minecraft" itemName="quartz_stairs"/>        
       </input>
       <output>
-        <itemStack modID="minecraft" itemName="quartz" number="1"/>
+        <itemStack modID="minecraft" itemName="quartz" number="2"/>
+        <itemStack modID="minecraft" itemName="quartz" number="2" chance="0.25"/>
       </output>
     </recipe>
 
-    <recipe name="Quartz Slab" energyCost="2400">
+    <recipe name="Quartz Slab" energyCost="1200">
       <input>      
-        <itemStack modID="minecraft" itemName="stone_slab" itemMeta="7"/>        
+        <itemStack modID="minecraft" itemName="stone_slab" itemMeta="7" />        
       </input>
       <output>
         <itemStack modID="minecraft" itemName="quartz" number="1"/>
+        <itemStack modID="minecraft" itemName="quartz" number="1" chance="0.25"/>
       </output>
     </recipe>
 
@@ -356,7 +292,7 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
 
     <recipe name="CopperOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreCopper"/>
+        <itemStack oreDictionary="oreCopper" />
       </input>
       <output>
         <itemStack oreDictionary="dustCopper"/>
@@ -367,7 +303,7 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
 
     <recipe name="CopperIngot" energyCost="2400">
       <input>
-        <itemStack oreDictionary="ingotCopper"/>
+        <itemStack oreDictionary="ingotCopper" />
       </input>
       <output>
         <itemStack oreDictionary="dustCopper"/>
@@ -376,7 +312,7 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
 
     <recipe name="TinOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreTin"/>
+        <itemStack oreDictionary="oreTin" />
       </input>
       <output>
         <itemStack oreDictionary="dustTin"/>
@@ -387,7 +323,7 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
 
     <recipe name="TinIngot" energyCost="2400">
       <input>
-        <itemStack oreDictionary="ingotTin"/>
+        <itemStack oreDictionary="ingotTin" />
       </input>
       <output>
         <itemStack oreDictionary="dustTin"/>
@@ -396,7 +332,7 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
 
     <recipe name="LeadOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreLead"/>
+        <itemStack oreDictionary="oreLead" />
       </input>
       <output>
         <itemStack oreDictionary="dustLead"/>
@@ -407,16 +343,16 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
 
     <recipe name="LeadIngot" energyCost="2400">
       <input>
-        <itemStack oreDictionary="ingotLead"/>
+        <itemStack oreDictionary="ingotLead" />
       </input>
       <output>
-        <itemStack oreDictionary="dustLead"/>
+        <itemStack oreDictionary="dustLead" />
       </output>
     </recipe>
 
     <recipe name="SilverOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreSilver"/>
+        <itemStack oreDictionary="oreSilver" />
       </input>
       <output>
         <itemStack oreDictionary="dustSilver"/>
@@ -427,28 +363,28 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
 
     <recipe name="SilverIngot" energyCost="2400">
       <input>
-        <itemStack oreDictionary="ingotSilver"/>
+        <itemStack oreDictionary="ingotSilver" />
       </input>
       <output>
-        <itemStack oreDictionary="dustSilver"/>
+        <itemStack oreDictionary="dustSilver" />
       </output>
     </recipe>
 
     <recipe name="BronzeIngot" energyCost="2400">
       <input>
-        <itemStack oreDictionary="ingotBronze"/>
+        <itemStack oreDictionary="ingotBronze" />
       </input>
       <output>
-        <itemStack oreDictionary="dustBronze"/>
+        <itemStack oreDictionary="dustBronze" />
       </output>
     </recipe>
 
     <recipe name="NickelIngot" energyCost="2400">
       <input>
-        <itemStack oreDictionary="ingotNickel"/>
+        <itemStack oreDictionary="ingotNickel" />
       </input>
       <output>
-        <itemStack oreDictionary="dustNickel"/>
+        <itemStack oreDictionary="dustNickel" />
       </output>
     </recipe>
 
@@ -467,7 +403,7 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
   
   <recipeGroup name="Thermal Expansion">
   
-    <recipe name="Obsidian" energyCost="3600">
+    <recipe name="Obsidian" energyCost="4000">
       <input>
         <itemStack modID="minecraft" itemName="obsidian"/>
       </input>      
@@ -482,13 +418,13 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
 
     <recipe name="Log" energyCost="2400">
       <input>
-        <itemStack oreDictionary="logWood"/>
+        <itemStack oreDictionary="logWood" />
       </input>
       <output>
-        <itemStack oreDictionary="pulpWood" number="1"/>
-        <itemStack oreDictionary="pulpWood" number="1" chance="0.9"/>
-        <itemStack oreDictionary="pulpWood" number="1" chance="0.5"/>
-        <itemStack oreDictionary="pulpWood" number="1" chance="0.1"/>
+        <itemStack oreDictionary="pulpWood" number="1" />
+        <itemStack oreDictionary="pulpWood" number="1" chance="0.9" />
+        <itemStack oreDictionary="pulpWood" number="1" chance="0.5" />
+        <itemStack oreDictionary="pulpWood" number="1" chance="0.1" />
       </output>
     </recipe>
 
@@ -528,7 +464,7 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
       </output>
     </recipe>
 
-    <recipe name="Stick" energyCost="1200">
+    <recipe name="Stick" energyCost="800">
       <input>
         <itemStack oreDictionary="stickWood" />
       </input>
@@ -544,38 +480,38 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
 
     <recipe name="CertusQuartzOre" energyCost="2400">
       <input>
-        <itemStack oreDictionary="oreCertusQuartz"/>
+        <itemStack oreDictionary="oreCertusQuartz" />
       </input>
       <output>
-        <itemStack oreDictionary="crystalCertusQuartz"/>
-        <itemStack oreDictionary="dustCertusQuartz"/>
+        <itemStack oreDictionary="crystalCertusQuartz" />
+        <itemStack oreDictionary="dustCertusQuartz" />
       </output>
     </recipe>
 
     <recipe name="CertusQuartzCrystal" energyCost="2400">
       <input>
-        <itemStack oreDictionary="crystalCertusQuartz"/>
+        <itemStack oreDictionary="crystalCertusQuartz" />
       </input>
       <output>
-        <itemStack oreDictionary="dustCertusQuartz"/>
+        <itemStack oreDictionary="dustCertusQuartz" />
       </output>
     </recipe>    
 
     <recipe name="FluixCrystal" energyCost="2400">
       <input>
-        <itemStack oreDictionary="crystalFluix"/>
+        <itemStack oreDictionary="crystalFluix" />
       </input>
       <output>
-        <itemStack oreDictionary="dustFluix"/>
+        <itemStack oreDictionary="dustFluix" />
       </output>
     </recipe>
 
     <recipe name="NetherQuartz" energyCost="2400">
       <input>
-        <itemStack modID="minecraft" itemName="quartz"/>        
+        <itemStack modID="minecraft" itemName="quartz" />        
       </input>
       <output>
-        <itemStack oreDictionary="dustNetherQuartz"/>
+        <itemStack oreDictionary="dustNetherQuartz" />
       </output>
     </recipe>
   </recipeGroup>
@@ -590,7 +526,47 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
         <itemStack oreDictionary="dustCharcoal" number="1" />
       </output>
     </recipe>
+    
+    <recipe name="CrushedObsidian" energyCost="2400">
+      <input>
+        <itemStack modID="Railcraft" itemName="tile.railcraft.cube" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustObsidian" number="1" />
+        <itemStack oreDictionary="dustObsidian" number="1" chance="0.01" />
+      </output>
+    </recipe>
+        
+  </recipeGroup>
 
+  <recipeGroup name="Biomes O' Plenty">
+
+    <recipe name="SmallBoneSegment" energyCost="2600">
+      <input>
+        <itemStack modID="BiomesOPlenty" itemName="bop.bones" itemMeta="0" />
+      </input>
+      <output>
+        <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="8" />        
+      </output>
+    </recipe>
+
+    <recipe name="MediumBoneSegment" energyCost="3200">
+      <input>
+        <itemStack modID="BiomesOPlenty" itemName="bop.bones" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="12" />
+      </output>
+    </recipe>
+
+    <recipe name="LargeBoneSegment" energyCost="4800">
+      <input>
+        <itemStack modID="BiomesOPlenty" itemName="bop.bones" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="24" />
+      </output>
+    </recipe>
   </recipeGroup>
 
   <recipeGroup name="Metallurgy">
@@ -598,98 +574,106 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
     <!-- Metals -->
     <recipe name="ManganeseOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreManganese"/>
+        <itemStack oreDictionary="oreManganese" />
       </input>      
       <output>
-        <itemStack oreDictionary="dustManganese" number="2"/>
+        <itemStack oreDictionary="dustManganese" number="2" />
       </output>
     </recipe>    
     <recipe name="ZincOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreZinc"/>
+        <itemStack oreDictionary="oreZinc" />
       </input>
       <output>
-        <itemStack oreDictionary="dustZinc" number="2"/>
+        <itemStack oreDictionary="dustZinc" number="2" />
+      </output>
+    </recipe>
+    <recipe name="SilverOre" energyCost="3600">
+      <input>
+        <itemStack oreDictionary="oreSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustSilver" number="2" />
       </output>
     </recipe>
     <recipe name="PlatinumOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="orePlatinum"/>
+        <itemStack oreDictionary="orePlatinum" />
       </input>
       <output>
-        <itemStack oreDictionary="dustPlatinum" number="2"/>
+        <itemStack oreDictionary="dustPlatinum" number="2" />
       </output>
     </recipe>
     <recipe name="IgnatiusOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreIgnatius"/>
+        <itemStack oreDictionary="oreIgnatius" />
       </input>
       <output>
-        <itemStack oreDictionary="dustIgnatius" number="2"/>
+        <itemStack oreDictionary="dustIgnatius" number="2" />
       </output>
     </recipe>
     <recipe name="ShadowIronOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreShadowIron"/>
+        <itemStack oreDictionary="oreShadowIron" />
       </input>
       <output>
-        <itemStack oreDictionary="dustShadowIron" number="2"/>
+        <itemStack oreDictionary="dustShadowIron" number="2" />
       </output>
     </recipe>
     <recipe name="LemuriteOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreLemurite"/>
+        <itemStack oreDictionary="oreLemurite" />
       </input>
       <output>
-        <itemStack oreDictionary="dustLemurite" number="2"/>
+        <itemStack oreDictionary="dustLemurite" number="2" />
       </output>
     </recipe>
     <recipe name="MidasiumOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreMidasium"/>
+        <itemStack oreDictionary="oreMidasium" />
       </input>
       <output>
-        <itemStack oreDictionary="dustMidasium" number="2"/>
+        <itemStack oreDictionary="dustMidasium" number="2" />
       </output>
     </recipe>
     <recipe name="VyroxeresOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreVyroxeres"/>
+        <itemStack oreDictionary="oreVyroxeres" />
       </input>
       <output>
-        <itemStack oreDictionary="dustVyroxeres" number="2"/>
+        <itemStack oreDictionary="dustVyroxeres" number="2" />
       </output>
     </recipe>
     <recipe name="CeruclaseOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreCeruclase"/>
+        <itemStack oreDictionary="oreCeruclase" />
       </input>
       <output>
-        <itemStack oreDictionary="dustCeruclase" number="2"/>
+        <itemStack oreDictionary="dustCeruclase" number="2" />
       </output>
     </recipe>
     <recipe name="KalendriteOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreKalendrite"/>
+        <itemStack oreDictionary="oreKalendrite" />
       </input>
       <output>
-        <itemStack oreDictionary="dustKalendrite" number="2"/>
+        <itemStack oreDictionary="dustKalendrite" number="2" />
       </output>
     </recipe>
     <recipe name="VulcaniteOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreVulcanite"/>
+        <itemStack oreDictionary="oreVulcanite" />
       </input>
       <output>
-        <itemStack oreDictionary="dustVulcanite" number="2"/>
+        <itemStack oreDictionary="dustVulcanite" number="2" />
       </output>
     </recipe>
     <recipe name="SanguiniteOre" energyCost="3600">
       <input>
-        <itemStack oreDictionary="oreSanguinite"/>
+        <itemStack oreDictionary="oreSanguinite" />
       </input>
       <output>
-        <itemStack oreDictionary="dustSanguinite" number="2"/>
+        <itemStack oreDictionary="dustSanguinite" number="2" />
       </output>
     </recipe>
     <recipe name="PrometheumOre" energyCost="3600">
@@ -796,6 +780,14 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
       </input>
       <output>
         <itemStack oreDictionary="dustZinc" number="1" />
+      </output>
+    </recipe>
+    <recipe name="SilverIngot" energyCost="2400">
+      <input>
+        <itemStack oreDictionary="ingotSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustSilver" number="1" />
       </output>
     </recipe>
     <recipe name="PlatinumIngot" energyCost="2400">
@@ -964,6 +956,14 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
       </input>
       <output>
         <itemStack oreDictionary="dustAtlarus" number="1" />
+      </output>
+    </recipe>
+    <recipe name="BronzeIngot" energyCost="2400">
+      <input>
+        <itemStack oreDictionary="ingotBronze" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustBronze" number="1" />
       </output>
     </recipe>
     <recipe name="HepatizonIngot" energyCost="2400">
@@ -1402,8 +1402,8 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
         <itemStack oreDictionary="oreOsmium" />
       </input>
       <output>
-        <itemStack oreDictionary="dustOsmium" number="1" />
-        <itemStack oreDictionary="dustOsmium" number="1" chance="0.9" />
+        <itemStack oreDictionary="dustOsmium" number="2" />
+        <itemStack oreDictionary="dustOsmium" number="1" chance="0.10" />
       </output>
     </recipe>
 
@@ -1432,6 +1432,15 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
   <recipeGroup name="Engineer's Toolbox">
 
     <!-- Metals -->
+    <recipe name="NickelOre" energyCost="3600">
+      <input>
+        <itemStack oreDictionary="oreNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustNickel" number="2" />
+        <itemStack oreDictionary="dustIron" number="1" chance="0.05" />
+      </output>
+    </recipe>
     <recipe name="AluminumOre" energyCost="3600">
       <input>
         <itemStack oreDictionary="oreAluminum" />
@@ -1442,6 +1451,14 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
     </recipe>
 
     <!-- Alloys and Ingots -->
+    <recipe name="NickelIngot" energyCost="2400">
+      <input>
+        <itemStack oreDictionary="ingotNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustNickel" number="1" />
+      </output>
+    </recipe>
     <recipe name="AluminumIngot" energyCost="2400">
       <input>
         <itemStack oreDictionary="ingotAluminum" />
@@ -1520,11 +1537,11 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
   </recipeGroup>
 
   <grindingBalls>  
-    <grindingBall grindingMultiplier="1.0" chanceMultiplier="1.25" powerMultiplier="0.9" durationRF="24000">
+    <grindingBall grindingMultiplier="1" chanceMultiplier="1.25" powerMultiplier="0.9" durationRF="24000">
       <itemStack modID="minecraft" itemName="flint"/>
     </grindingBall>
     <grindingBall grindingMultiplier="1.25" chanceMultiplier="1.5" powerMultiplier="0.8" durationRF="100000">
-      <itemStack oreDictionary="roundSteel" />
+      <itemStack modID="EnderIO" itemName="itemMaterial" itemMeta="7" />
     </grindingBall>
     
     <excludes>
@@ -1537,11 +1554,9 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
       <itemStack modID="minecraft" itemName="quartz" />         
       <itemStack oreDictionary="crystalCertusQuartz" />
       <itemStack oreDictionary="crystalFluix" />   
-    </excludes>
-    
+    </excludes>    
   </grindingBalls>
-
-
+  
 <recipeGroup name="GT Ores">
     
     <recipe name="oreTetrahedrite" energyCost="3600">
@@ -1609,6 +1624,6 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:sagmill", recipe);
       </output>
     </recipe>
 
-</recipeGroup>
-  
-</SAGMillRecipes>
+</recipeGroup> 
+
+  </SAGMillRecipes>

@@ -45,6 +45,7 @@ var obsidian = <minecraft:obsidian>;
 var diamond = <ore:gemDiamond>;
 var redstoneTorch = <minecraft:redstone_torch>;
 var cquartz = <ore:craftingQuartz>;
+var ingotRedAlloy = <ore:ingotRedAlloy>;
 #Wood
 var engineRedstone = <BuildCraft|Energy:engineBlock>;
 var workbenchAuto = <BuildCraft|Factory:autoWorkbenchBlock>;
@@ -57,6 +58,7 @@ var chute = <BuildCraft|Factory:blockHopper>;
 var engineCombustion = <BuildCraft|Energy:engineBlock:2>;
 var miningWell = <BuildCraft|Factory:miningWellBlock>;
 var floodGate = <BuildCraft|Factory:floodGateBlock>;
+var BCrequester = <BuildCraft|Silicon:requester>;
 #Gold
 var filler = <BuildCraft|Builders:fillerBlock>;
 var landMark = <BuildCraft|Builders:markerBlock>;
@@ -71,6 +73,7 @@ var assemblyTable = <BuildCraft|Silicon:laserTableBlock>;
 var integrationTable = <BuildCraft|Silicon:laserTableBlock:2>;
 var BCRefinery = <BuildCraft|Factory:refineryBlock>;
 var BCPump = <BuildCraft|Factory:pumpBlock>;
+var BCzonePlan = <BuildCraft|Silicon:zonePlan>;
 
 # Gears Crafting Changes
 recipes.remove(BCGearWood);
@@ -144,6 +147,11 @@ recipes.addShaped(floodGate, [
 	[ingotIron, GTGearIron, ingotIron],
 	[ironBars, BCTank, ironBars],
 	[ingotIron, ironBars, ingotIron]]);
+recipes.remove(BCrequester);
+recipes.addShaped(BCrequester, [
+	[ingotIron, piston, ingotIron],
+	[GTGearIron, chestWood, GTGearIron],
+	[ingotIron, ingotRedAlloy, ingotIron]]);
 
 #GearGold
 recipes.remove(filler);
@@ -181,6 +189,11 @@ recipes.addShaped(integrationTable, [
 	[obsidian, circuitBasic, obsidian],
 	[obsidian, chipsetRedstone, obsidian],
 	[obsidian, GTGearDiamond, obsidian]]);
+recipes.remove(BCzonePlan);
+recipes.addShaped(BCzonePlan, [
+	[ingotIron, ingotRedAlloy, ingotIron],
+	[GTGearGold, <minecraft:map>, GTGearGold],
+	[ingotIron, GTGearDiamond, ingotIron]]);	
 
 #Steel
 recipes.remove(BCRefinery);

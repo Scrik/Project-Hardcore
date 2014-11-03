@@ -1,167 +1,323 @@
-<!-- Edited by Dark Legacy -->
 <!-- 
-Custom recipes that will not be over written by Ender IO are added here.
-Examples of recipes can be found in AlloySmelterRecipes_Core.xml and general format
-documentation in SAGMillRecipes_Core/User.
 
-As well as adding custom recipes the operation of the Alloy Smelter as a vanilla furnace 
-can be controlled. It can be disabled completely by simply adding this line:
+Please refer to the documentation in SAGMillRecipes_Core/_User for details on the format used.
+Recipes for the alloy smelter have multiple inputs (up to three) and a single output. Multiple output tags
+can be used as long as they are for the same item. This allows 'chance' outputs, for example, if you wanted to 
+output some 4 bronze ingots with a 50% chance of a fifth, you would use:
 
-  <vanillaFurnaceRecipes enabled="false"/>
+<recipe name="Smelted Bronze" energyCost="750">
+   <input>
+      <itemStack oreDictionary="ingotCopper" number="1"/> 
+   </input>
+   <input>
+      <itemStack oreDictionary="ingotTon" number="3"/> 
+   </input>      
+   <output>
+     <itemStack oreDictionary="ingotBronze" number="4" exp="0.5"/>
+     <itemStack oreDictionary="ingotBronze" number="1" exp="0.5" chance="0.5"/>
+   </output>
+</recipe>   
 
-It is also possible to selectively disable vanilla furnace recipes.
-The following example disables the smelting of iron ingots, ender pearls and any form of iron ore registered in the
-ore dictionary.
 
-  <vanillaFurnaceRecipes>
-<exclude>
-<itemStack itemID="265" /> 
-<itemStack itemID="368" /> 
-<itemStack oreDictionary="oreIron" />  
-</exclude>
+The 'exp' value ranges from 0-1. Some exmaple values from a vanilla furnace are:
+gold=1
+iron=0.7
+food=0.35
+sand/cobble/wood=0.1
 
-  </vanillaFurnaceRecipes>
-  
-  Add this line to disbale the creation of TE alloys using the Alloy Smelter.
-  <recipeGroup name="Thermal Expansion" enabled="false"/>
+
+Recipes can also be added using forge IMC messages. For example, in the init method of a mod:
+
+String recipe = 
+       "<recipeGroup name=\"cheaty\">" +
+         "<recipe name=\"foo\" energyCost=\"2400\">" +
+           "<input>" +
+            "<itemStack modID=\"minecraft\" itemName=\"dirt\"/>" +
+           "</input>" +
+           "<output>" +
+            "<itemStack modID=\"minecraft\" itemName=\"diamond\"/>" +
+           "</output>" +
+          "</recipe>" +
+        "</recipeGroup>";
+FMLInterModComms.sendMessage("EnderIO", "recipe:alloysmelter", recipe); 
+
 -->
 
 <AlloySmelterRecipes>
-
-<vanillaFurnaceRecipes enabled="true"/>
-
-<recipeGroup name="EnderIO"> <!-- Required for EnderIO to function correctly. -->
-
-<recipe name="Fused Quartz" energyCost="3600">
-<input> 
- <itemStack modID="minecraft" itemName="quartz" number="4"/>
-</input> 
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="0"/> 
-</output>
-</recipe>
-
-<recipe name="Fused Glass" energyCost="2400">
-<input>
- <itemStack oreDictionary="sand"/>
-</input> 
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="1"/> 
-</output>
-</recipe>
-
-<recipe name="Fused Glass 2 Slots" energyCost="3600">
-<input>
- <itemStack oreDictionary="sand"/>
- <itemStack oreDictionary="sand"/>
-</input> 
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="1" number="2"/> 
-</output>
-</recipe>
-
-<recipe name="Fused Glass 3 Slots" energyCost="7200">
-<input>
- <itemStack oreDictionary="sand"/>
- <itemStack oreDictionary="sand"/>
- <itemStack oreDictionary="sand"/>
-</input> 
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="1" number="3"/> 
-</output>
-</recipe>
-
-
-<recipe name="Enlightened Fused Quartz" energyCost="3600">
-<input> 
- <itemStack modID="minecraft" itemName="quartz" number="4"/>
- <itemStack modID="minecraft" itemName="glowstone_dust" number="4"/>
-</input> 
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/> 
-</output>
-</recipe>
-
-<recipe name="Enlightened Fused Quartz 2" energyCost="3600">
-<input> 
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="0"/>
- <itemStack modID="minecraft" itemName="glowstone_dust" number="4"/>
-</input> 
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/> 
-</output>
-</recipe>
-
-<recipe name="Enlightened Fused Glass" energyCost="2400">
-<input>
- <itemStack oreDictionary="sand" />
- <itemStack modID="minecraft" itemName="glowstone_dust" number="4"/>
-</input> 
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="3"/> 
-</output>
-</recipe>
-
-<recipe name="Enlightened Fused Glass 2" energyCost="2400">
-<input>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="1"/> 
- <itemStack modID="minecraft" itemName="glowstone_dust" number="4"/>
-</input> 
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="3"/> 
-</output>
-</recipe>
   
-<recipe name="Fused Quartz from Block" energyCost="600">
-<input> 
- <itemStack modID="minecraft" itemName="quartz_block" number="1"/>
-</input>
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="0"/> 
-</output>
-</recipe>
+  <recipeGroup name="EnderIO"> <!-- Required for EnderIO to function correctly. -->
+    
+    <recipe name="Electrical Steel" energyCost="10000">
+      <input>
+        <itemStack oreDictionary="ingotIron"/>      
+        <itemStack oreDictionary="dustCoal" number="4"/>  
+        <itemStack oreDictionary="ingotElectrum"/>
+      </input>
+      <output>
+        <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="0"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Energetic Alloy" energyCost="10000">
+      <input>
+        <itemStack oreDictionary="ingotRedAlloy"/>
+        <itemStack oreDictionary="ingotElectrum"/>
+        <itemStack modID="minecraft" itemName="glowstone_dust"/>        
+      </input>                  
+      <output>
+        <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="1"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Vibrant Alloy" energyCost="10000">
+      <input>
+        <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="1"/> <!-- Energetic Alloy -->
+        <itemStack modID="minecraft" itemName="ender_pearl"/>
+      </input>                       
+      <output>
+        <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="2"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Redstone Alloy" energyCost="10000">
+      <input>
+        <itemStack oreDictionary="ingotRedAlloy"/>
+        <itemStack oreDictionary="dustStone"/>
+      </input>
+      <output>
+        <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="3"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Conductive Iron" energyCost="10000">
+      <input>
+        <itemStack oreDictionary="ingotRedAlloy"/>
+        <itemStack oreDictionary="ingotIron"/>
+      </input>
+      <output>
+        <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="4"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Pulsating Iron" energyCost="10000">
+      <input>
+      <itemStack oreDictionary="ingotIron"/>
+      <itemStack modID="minecraft" itemName="ender_pearl"/>
+      </input>
+      <output>
+        <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="5"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Dark Steel" energyCost="20000">
+      <input>
+        <itemStack oreDictionary="ingotIron"/>         
+        <itemStack oreDictionary="dustCoal" number="4"/>
+        <itemStack modID="minecraft" itemName="obsidian"/>
+      </input>
+      <output>
+        <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="6"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Soularium" energyCost="10000">
+      <input>
+        <itemStack modID="minecraft" itemName="soul_sand"/>
+        <itemStack oreDictionary="ingotElectrum"/>     
+      </input>                  
+      <output>
+        <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="7"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Fused Quartz" energyCost="5000">
+      <input>        
+        <itemStack modID="minecraft" itemName="quartz" number="4"/>
+      </input>            
+      <output>
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="0"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Fused Quartz 2 Slots" energyCost="10000">
+      <input>        
+        <itemStack modID="minecraft" itemName="quartz" number="4"/>
+        <itemStack modID="minecraft" itemName="quartz" number="4"/>
+      </input>            
+      <output>
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="0" number="2"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Fused Quartz 3 Slots" energyCost="15000">
+      <input>        
+        <itemStack modID="minecraft" itemName="quartz" number="4"/>
+        <itemStack modID="minecraft" itemName="quartz" number="4"/>
+        <itemStack modID="minecraft" itemName="quartz" number="4"/>
+      </input>            
+      <output>
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="0" number="3"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Fused Glass" energyCost="2500">
+      <input>
+        <itemStack oreDictionary="sand" />
+      </input>            
+      <output>
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="1"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Fused Glass 2 Slots" energyCost="5000">
+      <input>
+        <itemStack oreDictionary="sand" />
+        <itemStack oreDictionary="sand" />
+      </input>            
+      <output>
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="1" number="2"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Fused Glass 3 Slots" energyCost="7500">
+      <input>
+        <itemStack oreDictionary="sand" />
+        <itemStack oreDictionary="sand" />
+        <itemStack oreDictionary="sand" />
+      </input>            
+      <output>
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="1" number="3"/> 
+      </output>
+    </recipe>
+    
+    
+    <recipe name="Enlightened Fused Quartz" energyCost="5000">
+      <input>        
+        <itemStack modID="minecraft" itemName="quartz" number="4"/>
+        <itemStack modID="minecraft" itemName="glowstone_dust" number="4"/>
+      </input>            
+      <output>
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Enlightened Fused Quartz 2" energyCost="5000">
+      <input>        
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="0"/>
+        <itemStack modID="minecraft" itemName="glowstone_dust" number="4"/>
+      </input>            
+      <output>
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/> 
+      </output>
+    </recipe>
+       
+    <recipe name="Enlightened Fused Glass" energyCost="2500">
+      <input>
+        <itemStack oreDictionary="sand" />
+        <itemStack modID="minecraft" itemName="glowstone_dust" number="4"/>
+      </input>            
+      <output>
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="3"/> 
+      </output>
+    </recipe>
+    
+    <recipe name="Enlightened Fused Glass 2" energyCost="2500">
+      <input>
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="1"/> 
+        <itemStack modID="minecraft" itemName="glowstone_dust" number="4"/>
+      </input>            
+      <output>
+        <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="3"/> 
+      </output>
+    </recipe>
+  
+   <recipe name="Fused Quartz from Block" energyCost="500">
+        <input>        
+            <itemStack modID="minecraft" itemName="quartz_block" number="1"/>
+        </input>
+        <output>
+            <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="0"/> 
+        </output>
+    </recipe>
 
-<recipe name="Enlightened Fused Quartz from Block" energyCost="600">
-<input>
- <itemStack modID="minecraft" itemName="quartz_block" number="1"/>
- <itemStack modID="minecraft" itemName="glowstone_dust" number="4"/>
-</input>
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/>
-</output>
-</recipe>
+    <recipe name="Enlightened Fused Quartz from Block" energyCost="500">
+        <input>
+            <itemStack modID="minecraft" itemName="quartz_block" number="1"/>
+            <itemStack modID="minecraft" itemName="glowstone_dust" number="4"/>
+        </input>
+        <output>
+            <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/>
+        </output>
+    </recipe>
 
-<recipe name="Enlightened Fused Quartz from Block 2" energyCost="600">
-<input>
- <itemStack modID="minecraft" itemName="quartz_block" number="1"/>
- <itemStack modID="minecraft" itemName="glowstone" number="1"/>
-</input>
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/>
- </output>
-</recipe>
+    <recipe name="Enlightened Fused Quartz from Block 2" energyCost="500">
+        <input>
+            <itemStack modID="minecraft" itemName="quartz_block" number="1"/>
+            <itemStack modID="minecraft" itemName="glowstone" number="1"/>
+        </input>
+        <output>
+            <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/>
+        </output>
+    </recipe>
 
-<recipe name="Enlightened Fused Quartz from Block 3" energyCost="600">
-<input>
- <itemStack modID="minecraft" itemName="quartz" number="4"/>
- <itemStack modID="minecraft" itemName="glowstone" number="1"/>
-</input>
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/>
-</output>
-</recipe>
+    <recipe name="Enlightened Fused Quartz from Block 3" energyCost="500">
+        <input>
+            <itemStack modID="minecraft" itemName="quartz" number="4"/>
+            <itemStack modID="minecraft" itemName="glowstone" number="1"/>
+        </input>
+        <output>
+            <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/>
+        </output>
+    </recipe>
 
-<recipe name="Enlightened Fused Quartz from Block 4" energyCost="600">
-<input>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="0"/>
- <itemStack modID="minecraft" itemName="glowstone" number="1"/>
-</input>
-<output>
- <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/>
-</output>
-</recipe>
+    <recipe name="Enlightened Fused Quartz from Block 4" energyCost="500">
+        <input>
+            <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="0"/>
+            <itemStack modID="minecraft" itemName="glowstone" number="1"/>
+        </input>
+        <output>
+            <itemStack modID="EnderIO" itemName="blockFusedQuartz" itemMeta="2"/>
+        </output>
+    </recipe>
    
-</recipeGroup>
+  </recipeGroup>
+  
+  
+  <recipeGroup name="Thermal Expansion">  
+  
+    <recipe name="Electrum Ingot" energyCost="5000">
+      <input>
+        <itemStack oreDictionary="ingotGold"/>
+        <itemStack oreDictionary="ingotSilver"/>
+      </input>            
+      <output>
+       <itemStack oreDictionary="ingotElectrum" number="2"/>        
+      </output>
+    </recipe>
+    
+    <recipe name="Invar Ingot" energyCost="7500">      
+      <input>
+        <itemStack oreDictionary="ingotNickel" />     
+        <itemStack oreDictionary="ingotIron" number="2"/>
+      </input>
+      <output>
+       <itemStack oreDictionary="ingotInvar" number="3"/>        
+      </output>
+    </recipe>
+    
+    <recipe name="Hardened Glass" energyCost="4000">                      
+      <input>       
+        <itemStack oreDictionary="dustObsidian" number="8"/>
+        <itemStack oreDictionary="ingotLead" />
+      </input>
+      <output>                          
+       <itemStack modID="ThermalExpansion" itemName="Glass" number="2"/>        
+      </output>
+    </recipe>
+    
+  </recipeGroup>
+  
+  <vanillaFurnaceRecipes enabled="true"/>       
 
 <recipeGroup name="Alloys greg basic">  
 
@@ -426,6 +582,6 @@ ore dictionary.
 </output>
 </recipe>
   
-</recipeGroup>
+</recipeGroup> 
 
 </AlloySmelterRecipes>
