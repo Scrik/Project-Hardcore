@@ -1,49 +1,6 @@
-<!-- 
-
-Please refer to the documentation in SAGMillRecipes_Core/_User for details on the format used.
-Recipes for the alloy smelter have multiple inputs (up to three) and a single output. Multiple output tags
-can be used as long as they are for the same item. This allows 'chance' outputs, for example, if you wanted to 
-output some 4 bronze ingots with a 50% chance of a fifth, you would use:
-
-<recipe name="Smelted Bronze" energyCost="750">
-   <input>
-      <itemStack oreDictionary="ingotCopper" number="1"/> 
-   </input>
-   <input>
-      <itemStack oreDictionary="ingotTon" number="3"/> 
-   </input>      
-   <output>
-     <itemStack oreDictionary="ingotBronze" number="4" exp="0.5"/>
-     <itemStack oreDictionary="ingotBronze" number="1" exp="0.5" chance="0.5"/>
-   </output>
-</recipe>   
-
-
-The 'exp' value ranges from 0-1. Some exmaple values from a vanilla furnace are:
-gold=1
-iron=0.7
-food=0.35
-sand/cobble/wood=0.1
-
-
-Recipes can also be added using forge IMC messages. For example, in the init method of a mod:
-
-String recipe = 
-       "<recipeGroup name=\"cheaty\">" +
-         "<recipe name=\"foo\" energyCost=\"2400\">" +
-           "<input>" +
-            "<itemStack modID=\"minecraft\" itemName=\"dirt\"/>" +
-           "</input>" +
-           "<output>" +
-            "<itemStack modID=\"minecraft\" itemName=\"diamond\"/>" +
-           "</output>" +
-          "</recipe>" +
-        "</recipeGroup>";
-FMLInterModComms.sendMessage("EnderIO", "recipe:alloysmelter", recipe); 
-
--->
-
 <AlloySmelterRecipes>
+
+  <vanillaFurnaceRecipes enabled="true"/>       
   
   <recipeGroup name="EnderIO"> <!-- Required for EnderIO to function correctly. -->
     
@@ -281,43 +238,6 @@ FMLInterModComms.sendMessage("EnderIO", "recipe:alloysmelter", recipe);
     </recipe>
    
   </recipeGroup>
-  
-  
-  <recipeGroup name="Thermal Expansion">  
-  
-    <recipe name="Electrum Ingot" energyCost="5000">
-      <input>
-        <itemStack oreDictionary="ingotGold"/>
-        <itemStack oreDictionary="ingotSilver"/>
-      </input>            
-      <output>
-       <itemStack oreDictionary="ingotElectrum" number="2"/>        
-      </output>
-    </recipe>
-    
-    <recipe name="Invar Ingot" energyCost="7500">      
-      <input>
-        <itemStack oreDictionary="ingotNickel" />     
-        <itemStack oreDictionary="ingotIron" number="2"/>
-      </input>
-      <output>
-       <itemStack oreDictionary="ingotInvar" number="3"/>        
-      </output>
-    </recipe>
-    
-    <recipe name="Hardened Glass" energyCost="4000">                      
-      <input>       
-        <itemStack oreDictionary="dustObsidian" number="8"/>
-        <itemStack oreDictionary="ingotLead" />
-      </input>
-      <output>                          
-       <itemStack modID="ThermalExpansion" itemName="Glass" number="2"/>        
-      </output>
-    </recipe>
-    
-  </recipeGroup>
-  
-  <vanillaFurnaceRecipes enabled="true"/>       
 
 <recipeGroup name="Alloys greg basic">  
 

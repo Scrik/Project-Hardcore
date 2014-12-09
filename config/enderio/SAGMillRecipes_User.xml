@@ -26,7 +26,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustIron"/>      
-        <itemStack oreDictionary="dustIron" chance="0.9"/>      
+        <itemStack oreDictionary="dustIron" chance="0.7"/>      
         <itemStack oreDictionary="dustNickel" chance="0.05"/>
       </output>
     </recipe>
@@ -46,7 +46,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustGold"/>      
-        <itemStack oreDictionary="dustGold" chance="0.9"/>      
+        <itemStack oreDictionary="dustGold" chance="0.7"/>      
         <itemStack oreDictionary="dustNickel" chance="0.05"/>
       </output>
     </recipe>
@@ -170,7 +170,7 @@
       </input>
       <output>      
         <itemStack modID="minecraft" itemName="glowstone_dust" number="3"/>
-        <itemStack modID="minecraft" itemName="glowstone_dust" number="1" chance="0.9"/>      
+        <itemStack modID="minecraft" itemName="glowstone_dust" number="1" chance="0.7"/>      
       </output>
     </recipe>
 
@@ -180,7 +180,7 @@
       </input>
       <output>
         <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="3" />
-        <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="1" chance="0.9"/>
+        <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="1" chance="0.7"/>
         <itemStack modID="minecraft" itemName="dye" itemMeta="15" number="2" chance="0.05"/>        
       </output>
     </recipe>
@@ -216,11 +216,11 @@
 
     <recipe name="RedstoneOre" energyCost="3000">
       <input>
-        <itemStack modID="minecraft" itemName="redstone_ore" />        
+        <itemStack oreDictionary="oreRedstone" />        
       </input>
       <output>
        <itemStack modID="minecraft" itemName="redstone" number="8"/>
-        <itemStack modID="minecraft" itemName="redstone" number="1" chance="0.9"/>        
+        <itemStack modID="minecraft" itemName="redstone" number="2" chance="0.7"/>        
         <itemStack oreDictionary="dustCinnabar" chance="0.05" />
       </output>
     </recipe>
@@ -251,7 +251,7 @@
       </input>
       <output>
         <itemStack modID="minecraft" itemName="quartz" number="1"/>
-        <itemStack modID="minecraft" itemName="quartz" chance="0.9" />     
+        <itemStack modID="minecraft" itemName="quartz" chance="0.7" />     
       </output>
     </recipe>
 
@@ -296,7 +296,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustCopper"/>
-        <itemStack oreDictionary="dustCopper" chance="0.9"/>
+        <itemStack oreDictionary="dustCopper" chance="0.7"/>
         <itemStack oreDictionary="dustCobalt" chance="0.05"/>
       </output>
     </recipe>
@@ -316,7 +316,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustTin"/>
-        <itemStack oreDictionary="dustTin" chance="0.9"/>
+        <itemStack oreDictionary="dustTin" chance="0.7"/>
         <itemStack oreDictionary="dustIron" chance="0.05"/>
       </output>
     </recipe>
@@ -336,7 +336,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustLead"/>
-        <itemStack oreDictionary="dustLead" chance="0.9"/>
+        <itemStack oreDictionary="dustLead" chance="0.7"/>
         <itemStack oreDictionary="dustSilver" chance="0.05"/>
       </output>
     </recipe>
@@ -356,7 +356,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustSilver"/>
-        <itemStack oreDictionary="dustSilver"  chance="0.9"/>
+        <itemStack oreDictionary="dustSilver"  chance="0.7"/>
         <itemStack oreDictionary="dustLead" chance="0.05"/>
       </output>
     </recipe>
@@ -394,7 +394,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustNickel" number="1"/>
-        <itemStack oreDictionary="dustNickel" chance="0.9"/>
+        <itemStack oreDictionary="dustNickel" chance="0.7"/>
         <itemStack oreDictionary="dustPlatinum" chance="0.05"/>
       </output>
     </recipe>
@@ -422,7 +422,7 @@
       </input>
       <output>
         <itemStack oreDictionary="pulpWood" number="1" />
-        <itemStack oreDictionary="pulpWood" number="1" chance="0.9" />
+        <itemStack oreDictionary="pulpWood" number="1" chance="0.7" />
         <itemStack oreDictionary="pulpWood" number="1" chance="0.5" />
         <itemStack oreDictionary="pulpWood" number="1" chance="0.1" />
       </output>
@@ -433,7 +433,7 @@
         <itemStack oreDictionary="plankWood" />
       </input>
       <output>
-        <itemStack oreDictionary="pulpWood" number="1" chance="0.9" />
+        <itemStack oreDictionary="pulpWood" number="1" chance="0.7" />
       </output>
     </recipe>
 
@@ -1537,10 +1537,10 @@
   </recipeGroup>
 
   <grindingBalls>  
-    <grindingBall grindingMultiplier="1" chanceMultiplier="1.25" powerMultiplier="0.9" durationRF="24000">
+    <grindingBall grindingMultiplier="1" chanceMultiplier="0.8" powerMultiplier="0.9" durationRF="24000">
       <itemStack modID="minecraft" itemName="flint"/>
     </grindingBall>
-    <grindingBall grindingMultiplier="1.25" chanceMultiplier="1.5" powerMultiplier="0.8" durationRF="100000">
+    <grindingBall grindingMultiplier="1.25" chanceMultiplier="0.9" powerMultiplier="0.8" durationRF="100000">
       <itemStack modID="EnderIO" itemName="itemMaterial" itemMeta="7" />
     </grindingBall>
     
@@ -1565,7 +1565,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustTetrahedrite"/>      
-        <itemStack oreDictionary="dustTetrahedrite" chance="0.9"/>      
+        <itemStack oreDictionary="dustTetrahedrite" chance="0.7"/>      
         <itemStack oreDictionary="dustAntimony" chance="0.05"/>      
       </output>
     </recipe>
@@ -1576,7 +1576,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustAntimony"/>      
-        <itemStack oreDictionary="dustAntimony" chance="0.9"/>      
+        <itemStack oreDictionary="dustAntimony" chance="0.7"/>      
       </output>
     </recipe>
 
@@ -1586,7 +1586,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustCassiterite"/>      
-        <itemStack oreDictionary="dustCassiterite" chance="0.9"/>      
+        <itemStack oreDictionary="dustCassiterite" chance="0.7"/>      
         <itemStack oreDictionary="dustTin" chance="0.05"/>      
       </output>
     </recipe>
@@ -1597,7 +1597,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustGalena"/>      
-        <itemStack oreDictionary="dustGalena" chance="0.9"/>      
+        <itemStack oreDictionary="dustGalena" chance="0.7"/>      
         <itemStack oreDictionary="dustSulfur" chance="0.05"/>      
       </output>
     </recipe>
@@ -1608,7 +1608,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustMagnetite"/>      
-        <itemStack oreDictionary="dustMagnetite" chance="0.9"/>      
+        <itemStack oreDictionary="dustMagnetite" chance="0.7"/>      
         <itemStack oreDictionary="dustIron" chance="0.05"/>      
       </output>
     </recipe>
@@ -1619,7 +1619,7 @@
       </input>
       <output>
         <itemStack oreDictionary="dustVanadiumMagnetite"/>      
-        <itemStack oreDictionary="dustVanadiumMagnetite" chance="0.9"/>      
+        <itemStack oreDictionary="dustVanadiumMagnetite" chance="0.7"/>      
         <itemStack oreDictionary="dustMagnetite" chance="0.05"/>      
       </output>
     </recipe>
