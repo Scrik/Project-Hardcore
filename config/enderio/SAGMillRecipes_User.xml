@@ -1536,25 +1536,23 @@
     </recipe>
   </recipeGroup>
 
-  <grindingBalls>  
-    <grindingBall grindingMultiplier="1" chanceMultiplier="0.8" powerMultiplier="0.9" durationRF="24000">
-      <itemStack modID="minecraft" itemName="flint"/>
+  <grindingBalls>
+    <grindingBall id="Flint" grindingMultiplier="1" chanceMultiplier="0.8" powerMultiplier="0.9" durationRF="24000">
+      <itemStack modID="minecraft" itemName="flint" />
     </grindingBall>
-    <grindingBall grindingMultiplier="1.25" chanceMultiplier="0.9" powerMultiplier="0.8" durationRF="100000">
+    <grindingBall id="DarkSteelBall" grindingMultiplier="1.25" chanceMultiplier="0.9" powerMultiplier="0.8" durationRF="100000">
       <itemStack modID="EnderIO" itemName="itemMaterial" itemMeta="7" />
     </grindingBall>
-    
     <excludes>
       <itemStack modID="minecraft" itemName="glowstone" />
-      <itemStack modID="minecraft" itemName="wool" itemMeta="*"/>   
-      <itemStack modID="minecraft" itemName="quartz_block" itemMeta="*"/>
-      <itemStack modID="minecraft" itemName="quartz_stairs"/>
-      <itemStack modID="minecraft" itemName="stone_slab" itemMeta="7" /> 
-      
-      <itemStack modID="minecraft" itemName="quartz" />         
+      <itemStack modID="minecraft" itemName="wool" itemMeta="*" />
+      <itemStack modID="minecraft" itemName="quartz_block" itemMeta="*" />
+      <itemStack modID="minecraft" itemName="quartz_stairs" />
+      <itemStack modID="minecraft" itemName="stone_slab" itemMeta="7" />
+      <itemStack modID="minecraft" itemName="quartz" />
       <itemStack oreDictionary="crystalCertusQuartz" />
-      <itemStack oreDictionary="crystalFluix" />   
-    </excludes>    
+      <itemStack oreDictionary="crystalFluix" />
+    </excludes>
   </grindingBalls>
   
 <recipeGroup name="GT Ores">

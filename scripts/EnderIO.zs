@@ -4,6 +4,9 @@ import mods.nei.NEI;
 #Aliases
 var EIOWrench = <EnderIO:itemYetaWrench>;
 var BCWrench = <BuildCraft|Core:wrenchItem>;
+var EIOGearStone = <EnderIO:itemMachinePart:1>;
+var EIOSilicon = <EnderIO:itemMaterial>;
+
 var EIOStirlingGenerator = <EnderIO:blockStirlingGenerator>;
 var EIOCombustionGenerator = <EnderIO:blockCombustionGenerator>;
 var EIOSAGMill = <EnderIO:blockSagMill>;
@@ -23,6 +26,16 @@ var EIOSteel = <ore:ingotElectricalSteel>;
 var EIOTank = <EnderIO:blockTank>;
 var cauldron = <minecraft:cauldron>;
 var ingotRedAlloy = <ore:ingotRedAlloy>;
+
+#Recipe remove
+recipes.remove(EIOGearStone);
+<ore:gearStone>.remove(EIOGearStone);
+NEI.hide(EIOGearStone);
+
+recipes.remove(EIOSilicon);
+<ore:Silicon>.remove(EIOSilicon);
+<ore:itemSilicon>.remove(EIOSilicon);
+NEI.hide(EIOSilicon);
 
 # Items/Blocks Change
 recipes.remove(EIOWrench);
