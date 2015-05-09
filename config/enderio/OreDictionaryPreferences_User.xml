@@ -1,5 +1,111 @@
-<!-- 
-Entries in this file take precedence over the values in the core file
- -->
+<!--
+
+IMPORTANT:
+  This is the core recipe file. Modifying this file will have no effect.
+  It will be rewritten by EnderIO and all modifications made to it will be lost. To add
+  or modify ore dict preferences please use 'OreDictionaryPreferences_User.xml'
+  
+This file contains the preferred outputs from Ender IO machines for items registered in the OreDictionary
+
+Details of itemStack definition can be found in SAGMillRecipes_Core.xml
+
+Item Information and data dumps:
+
+To show ore dictionary and/or registered names, in the EnderIO config set:
+addRegisterdNameTooltip=true
+addOreDictionaryTooltips=true
+
+To write all registered items to config/modObjectsRegistery.txt include in SAGMillRecipes_User.xml: 
+<dumpRegistry modObjects="true/>
+
+To write the contents of the ore dictionary to config/oreDictionaryRegistery.txt include in SAGMillRecipes_User.xml:
+<dumpRegistery oreDictionary="true"/>
+-->
 <OreDictionaryPreferences>
+
+  <!-- Dusts -->
+
+  <preference oreDictionary="dustCoal">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2535" />
+  </preference>
+
+  <preference oreDictionary="dustCharcoal">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2536" />
+  </preference>
+
+  <preference oreDictionary="dustObsidian">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2804" />
+  </preference>
+
+  <preference oreDictionary="dustIron">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2032" />
+  </preference>
+
+  <preference oreDictionary="dustGold">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2086" />
+  </preference>
+
+  <preference oreDictionary="dustCopper">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2035" />
+  </preference>
+
+  <preference oreDictionary="dustTin">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2057" />
+  </preference>
+
+  <preference oreDictionary="dustSilver">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2054" />
+  </preference>
+
+  <preference oreDictionary="dustLead">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2089" />
+  </preference>
+
+  <preference oreDictionary="dustNickel">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2034" />
+  </preference>
+
+  <preference oreDictionary="dustSulfur">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2022" />
+  </preference>
+
+  <preference oreDictionary="dustBronze">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2300" />
+  </preference>
+  
+  <preference oreDictionary="dustNetherQuartz">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2522" />
+  </preference>
+
+  <preference oreDictionary="dustEnderPearl">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="2532" />
+  </preference>
+
+
+  <!-- Ingots -->
+
+  <preference oreDictionary="ingotCopper">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="11035" />
+  </preference>
+  
+  <preference oreDictionary="ingotTin">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="11057" />
+  </preference>
+  
+  <preference oreDictionary="ingotSilver">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="11054" />
+  </preference>
+  
+  <preference oreDictionary="ingotLead">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="11089" />
+  </preference>
+  
+  <preference oreDictionary="ingotBronze">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="11300" />
+  </preference>
+  
+  <preference oreDictionary="ingotSteel">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="11305" />
+  </preference>
+
 </OreDictionaryPreferences>
