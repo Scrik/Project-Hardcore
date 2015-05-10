@@ -15,3 +15,6 @@ recipes.remove(<EnderIO:item.darkSteel_pickaxe>);
 NEI.hide(<EnderIO:item.darkSteel_pickaxe>);
 recipes.remove(<EnderIO:item.darkSteel_axe>);
 NEI.hide(<EnderIO:item.darkSteel_axe>);
+
+recipes.remove(<EnderIO:itemBrokenSpawner>);
+NEI.hide(<EnderIO:itemBrokenSpawner>);
