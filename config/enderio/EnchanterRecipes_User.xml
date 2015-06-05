@@ -11,7 +11,7 @@ for (int i = 0; i < level; i++) {
 <enchaterRecipes>
 
   <enchantment name="enchantment.protect.all" costPerLevel="1">
-    <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="6"/> 
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="11305" />
   </enchantment>
 
   <enchantment name="enchantment.protect.fire" costPerLevel="2">
@@ -63,7 +63,7 @@ for (int i = 0; i < level; i++) {
   </enchantment>
 
   <enchantment name="enchantment.lootBonus" costPerLevel="4">  
-    <itemStack oreDictionary="itemSkull"/>    
+    <itemStack oreDictionary="gemDiamond"/>    
   </enchantment>
 
   <enchantment name="enchantment.digging" costPerLevel="1">

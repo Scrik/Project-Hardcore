@@ -6,4 +6,6 @@ recipes.remove(<ProjRed|Core:projectred.core.part:40>);
 furnace.remove(<*>, <ProjRed|Core:projectred.core.part:40>);
 NEI.hide(<ProjRed|Core:projectred.core.part:40>);
 <ore:ingotRedAlloy>.remove(<ProjRed|Core:projectred.core.part:10>);
-
+recipes.remove(<ProjRed|Core:projectred.core.part:10>);
+furnace.remove(<*>, <ProjRed|Core:projectred.core.part:10>);
+NEI.hide(<ProjRed|Core:projectred.core.part:10>);

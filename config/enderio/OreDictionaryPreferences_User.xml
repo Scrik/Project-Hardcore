@@ -23,6 +23,13 @@ To write the contents of the ore dictionary to config/oreDictionaryRegistery.txt
 -->
 <OreDictionaryPreferences>
 
+  <!-- Items -->
+
+  <preference oreDictionary="itemSilicon">
+    <itemStack modID="gregtech" itemName="gt.metaitem.01" itemMeta="17020" />
+  </preference>
+
+
   <!-- Dusts -->
 
   <preference oreDictionary="dustCoal">

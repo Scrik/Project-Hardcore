@@ -2,34 +2,40 @@ Project Hardcore
 ================
 Hardcore gameplay focused modpack for Minecraft 1.7.x
 
+What has been done already - https://github.com/darkeymc/Project-Hardcore/blob/master/done.txt
+ToDo - https://github.com/darkeymc/Project-Hardcore/blob/master/todo.txt
 
 ###ModList:
 * BetterFonts, orig. by thvortex - http://www.minecraftforum.net/topic/1142084-
 * TreeCapitator, by bspkrs - http://bspk.rs/MC/Treecapitator/addons/index.html
+* Advanced Generators, by BDew - http://bdew.net/generators
 * Advanced Solar Panels, by SeNtiMeL - http://forum.industrial-craft.net/index.php?page=Thread&threadID=3291
 * Applied Energistics 2, by AlgorithmX - http://ae2.ae-mod.info/
 * Bibliocraft, by Nuchaz - http://www.bibliocraftmod.com/
 * Bibliowoods [Forestry], by Nuchaz - http://www.bibliocraftmod.com/
-* BuildCraft NextGen, by BuildCraft team - http://www.mod-buildcraft.com/
+* BuildCraft, by BuildCraft team - http://www.mod-buildcraft.com/
+* BuildCraft Compat, by BuildCraft team - http://www.mod-buildcraft.com/
 * Carpenter's Blocks, by Mineshopper - http://www.carpentersblocks.com/
 * Code Chicken Core, by Chickenbones - http://chickenbones.net
 * Chisel 2, by TheCricket26; orig. by AUTOMATIC_MAIDEN - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2254671-chisel-2
-* Code Chicken Core, by Chickenbones - http://chickenbones.net
+* ChickenChunks, by Chickenbones - http://chickenbones.net
 * EnderIO, by CrazyPants - http://enderio.com
 * Ender Storage, by Chickenbones - http://chickenbones.net
 * EnetBridge, by Player - http://forum.industrial-craft.net/index.php?page=Thread&threadID=10864
 * ExtraCells 2, by Leonelf - http://www.minecraftforum.net/topic/1801643-
 * FastCraft, by Player - http://forum.industrial-craft.net/index.php?page=Thread&threadID=10820
 * Forestry, orig. by SirSengir - http://forestry.sengir.net
-* Gendustry, by BDew - http://bdew.net
+* Gendustry, by BDew - http://bdew.net/gendustry
 * Gravestone, by NightKosh - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1288082-gravestone-mod-v2-10-1
 * Gravitation Suite, by SeNtiMeL - http://forum.industrial-craft.net/index.php?page=Thread&threadID=6915
 * GregTech 5 fork, by Blood Asp, orig by GregoriusT - http://forum.industrial-craft.net/index.php?page=Thread&threadID=11488
 * Grimoire of Gaia 3, by Silentine - http://www.minecraftforum.net/topic/1355291-
+* IC2 Backpack HUD, by Mineshopper - http://forum.industrial-craft.net/index.php?page=Thread&threadID=8495
 * IndustrialCraft 2 Combo Armors, by Zuxelus; orig. by UnixRano - https://bitbucket.org/Zuxelus/ic2-combo-armors
+* IC2 Nuclear Control 2, by xbony2 - http://forum.industrial-craft.net/index.php?page=Thread&threadID=10649
 * Industrial Craft 2, by IC2Team - http://forum.industrial-craft.net
 * Iron Chest, by cpw - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1280827-1-5-and-up-forge-universal-ironchests-5-0
-* MapWriter, by mapwriter - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1286882-mapwriter-an-open-source-mini-map
+* Journey map, by techbrew - http://journeymap.techbrew.net/
 * MineTweaker 3 by StanH - http://minetweaker3.powerofbytes.com
 * NEI Addons by bdew - http://bdew.net/neiaddons/
 * NEIIntegration by Tonius; orig. by mistaqur - http://www.curse.com/mc-mods/minecraft/225251-nei-integration
@@ -38,8 +44,6 @@ Hardcore gameplay focused modpack for Minecraft 1.7.x
 * Project:Red by MrTJP, Chickenbones - http://projectredwiki.com
 * Roguelike Dungeons, by Greymerk - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1290238-roguelike-dungeons-v1-3-5
 * Waila, by ProfMobius - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1289765-waila-1-5-2
-* Waila Harvestability, by squeek502 - http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1295067-waila-harvestability-how-can-i-harvest-what-im
-
 
 
 ###Important notes
