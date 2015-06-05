@@ -2,8 +2,8 @@ Project Hardcore
 ================
 Hardcore gameplay focused modpack for Minecraft 1.7.x
 
-What has been done already - https://github.com/darkeymc/Project-Hardcore/blob/master/done.txt
-ToDo - https://github.com/darkeymc/Project-Hardcore/blob/master/todo.txt
+* What has been done already - https://github.com/darkeymc/Project-Hardcore/blob/master/done.txt
+* ToDo - https://github.com/darkeymc/Project-Hardcore/blob/master/todo.txt
 
 ###ModList:
 * BetterFonts, orig. by thvortex - http://www.minecraftforum.net/topic/1142084-
