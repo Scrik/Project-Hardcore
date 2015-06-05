@@ -1,0 +1,9 @@
+tppos in journeymap on server side;
+
+quartz plate, quartzite dusts to AE2 recipes
+
+plateSodalite -> forming press advanced circuit recipe
+
+-----
+
+grimoire of gaya(oredict all shards to dustSmall)
