@@ -49,3 +49,5 @@ Hardcore gameplay focused modpack for Minecraft 1.7.x
 ###Important notes
 * All configs and scripts available for public so you can use them.
 * WARNING! For informational purposes only. I hold no responsibility if something in your world will damaged!
+
+* This pack contains Fastcraft, by Player, enabled by default. Fastcraft enhances Minecraft with increased performance. Additional information here - http://forum.industrial-craft.net/index.php?page=Thread&threadID=10820
