@@ -1,0 +1,71 @@
+Recipes changes:
+All ingots are replaced by plates almost anywhere.
+All ores in world generates only by Gregtech.
+RF<->EU convertion ratio is 4:1
+
+AE2:
+Oredict recipes:
+GregTech Charged Certus Quartz/Certus Quartz/Nether quartz
+Quartzite added to craftingQuartz
+
+Ender IO:
+Stirling/Combustion generator recipes changed.
+Alloys recipes changed
+
+Etc:
+Oredict: register dustSodium as dyeBlue
+
+Gregtech:
+ic2 hot coolant from distiled water and lazurite/lapis/sodium dust recipe added to Canner
+ic2 MOX/Uranium GT Thorium fuel rod recipes added to GT Canner
+Sand from gravel recipe added to GT Forge Hammer;
+
+Industrial Craft 2:
+ic2 wires registered as gt 1xwires / recipe changed to 1x output for manual craft
+ic2 Advanced Heat Exhanger recipe changed to lapis/lazurite/sodalite plates use
+
+------
+
+Config changes:
+
+AE2:
+disabled some tools
+disabled inscriber
+disabled channels
+disabled inworld  ae seeds/crystalls/fluix growth
+
+Advanced Generators:
+Turbine output changed to 24 eu/t
+
+Advanced SOlar Panels:
+Sunnarium part now have 2560000 eu cost;
+Sunnarium now have 10240000 eu cost or 4 sunnarium parts;
+Sunnarium and parts craftable in gt assembler/ ic2 compressor/ ic2 macerator
+
+Ender storage:
+Inventory size changed to 6x9
+
+Enet Bridge:
+RF<->EU convertion rate changed to 1:4
+
+Ender IO:
+Armor/tools/traveller's staff disabled.
+Generators recipes changed.
+Most of GT alloy added to Ender IO alloy smelter recipes
+Enchanter Recipes changed
+Ore Dictionary Preferences changed
+Slice'n'spice removed
+VAT recipes removed
+
+Gregtech:
+UpgradeStacksize changed to 64
+Plasma Generators effeciency changed to 70/80/90/100
+RF<->EU convertion rate changed to 1:4
+
+Industrial Craft 2:
+Generator outbut lowered to 8 eu/t
+Thermal generator output changed to 24 eu/t
+Stirling generator output lowered to 48 eu/t max.
+
+TreeCapitator:
+Tools: Added gregtech axes and knifes
