@@ -10,6 +10,7 @@ var BCGearDiamond = <BuildCraft|Core:diamondGearItem>;
 
 var map = <minecraft:map>;
 var paper = <minecraft:paper>;
+var bucket = <minecraft:bucket>;
 var glass = <ore:blockGlass>;
 var chest = <ore:craftingChest>;
 var piston = <minecraft:piston>;
@@ -18,8 +19,14 @@ var diamond = <ore:gemDiamond>;
 var emerald = <ore:gemEmerald>;
 var obsidian = <ore:stoneObsidian>;
 var dyeBlue = <ore:dyeBlue>;
+var BCredstoneCrystal = <BuildCraft|Silicon:redstoneCrystal>;
+var BCchip = <BuildCraft|Silicon:redstoneChipset>;
+var BCchipGold = <BuildCraft|Silicon:redstoneChipset:2>;
+var BCchipDiamond = <BuildCraft|Silicon:redstoneChipset:3>;
+var BCtank = <BuildCraft|Factory:tankBlock>;
 var ipickaxe = <minecraft:iron_pickaxe>;
 var ibars = <minecraft:iron_bars>;
+var craftingWorkBench = <ore:craftingWorkBench>;
 var plateIron = <ore:plateIron>;
 var plateGold = <ore:plateGold>;
 var plateRedAlloy = <ore:plateRedAlloy>;
@@ -50,9 +57,19 @@ recipes.remove(BCGearDiamond);
 NEI.hide(BCGearDiamond);
 
 #recipes
+recipes.remove(<BuildCraft|Builders:markerBlock>);
+recipes.addShaped(<BuildCraft|Builders:markerBlock>, [
+	[dyeBlue, null, null],
+	[rtorch, null, null]]);
 
-recipes.remove(<BuildCraft|Energy:engineBlock:2>);
-recipes.addShaped(<BuildCraft|Energy:engineBlock:2>, [
+recipes.remove(<BuildCraft|Builders:blueprintItem>);
+recipes.addShaped(<BuildCraft|Builders:blueprintItem>, [
+	[paper, paper, paper],
+	[paper, dyeBlue, paper],
+	[paper, paper, paper]]);
+
+recipes.remove(<BuildCraft|Core:engineBlock:2>);
+recipes.addShaped(<BuildCraft|Core:engineBlock:2>, [
 	[plateIron, plateIron, plateIron],
 	[null, glass, null],
 	[gearIron, piston, gearIron]]);
@@ -63,17 +80,52 @@ recipes.addShaped(<BuildCraft|Factory:miningWellBlock>, [
 	[plateIron, gearIron, plateIron],
 	[plateIron, ipickaxe, plateIron]]);
 
+recipes.remove(<BuildCraft|Factory:pumpBlock>);
+recipes.addShaped(<BuildCraft|Factory:pumpBlock>, [
+	[plateIron, plateRedAlloy, plateIron],
+	[plateIron, gearIron, plateIron],
+	[BCtank, bucket, BCtank]]);
+
 recipes.remove(<BuildCraft|Factory:floodGateBlock>);
 recipes.addShaped(<BuildCraft|Factory:floodGateBlock>, [
 	[plateIron, gearIron, plateIron],
-	[ibars, <BuildCraft|Factory:tankBlock>, ibars],
+	[ibars, BCtank, ibars],
 	[plateIron, ibars, plateIron]]);
 
 recipes.remove(<BuildCraft|Factory:blockHopper>);
 recipes.addShaped(<BuildCraft|Factory:blockHopper>, [
 	[plateIron, chest, plateIron],
-	[plateIron, gearStone, plateIron],
-	[null, plateIron, null]]);
+	[null, gearStone, null]]);
+
+recipes.remove(<BuildCraft|Robotics:zonePlan>);
+recipes.addShaped(<BuildCraft|Robotics:zonePlan>, [
+	[plateIron, plateRedAlloy, plateIron],
+	[gearGold, map, gearGold],
+	[plateIron, gearDiamond, plateIron]]);
+
+recipes.remove(<BuildCraft|Robotics:requester>);
+recipes.addShaped(<BuildCraft|Robotics:requester>, [
+	[plateIron, piston, plateIron],
+	[gearIron, chest, gearIron],
+	[plateIron, plateRedAlloy, plateIron]]);
+
+recipes.remove(<BuildCraft|Robotics:robot>);
+recipes.addShaped(<BuildCraft|Robotics:robot>, [
+	[plateIron, plateIron, plateIron],
+	[plateIron, BCredstoneCrystal, plateIron],
+	[BCchipDiamond, null, BCchipDiamond]]);
+
+recipes.remove(<BuildCraft|Robotics:robotStation>);
+recipes.addShaped(<BuildCraft|Robotics:robotStation>, [
+	[null, null, null],
+	[null, plateIron, null],
+	[plateIron, BCchipGold, plateIron]]);
+
+recipes.remove(<BuildCraft|Robotics:redstone_board>);
+recipes.addShaped(<BuildCraft|Robotics:redstone_board>, [
+	[paper, paper, paper],
+	[paper, plateRedAlloy, paper],
+	[paper, paper, paper]]);
 
 recipes.remove(<BuildCraft|Silicon:laserBlock>);
 recipes.addShaped(<BuildCraft|Silicon:laserBlock>, [
@@ -83,56 +135,28 @@ recipes.addShaped(<BuildCraft|Silicon:laserBlock>, [
 
 recipes.remove(<BuildCraft|Silicon:laserTableBlock>);
 recipes.addShaped(<BuildCraft|Silicon:laserTableBlock>, [
-	[obsidian, plateRedAlloy, obsidian],
 	[obsidian, diamond, obsidian],
+	[obsidian, plateRedAlloy, obsidian],
 	[obsidian, gearDiamond, obsidian]]);
+
 
 recipes.remove(<BuildCraft|Silicon:laserTableBlock:2>);
 recipes.addShaped(<BuildCraft|Silicon:laserTableBlock:2>, [
-	[obsidian, plateRedAlloy, obsidian],
-	[obsidian, <BuildCraft|Silicon:redstoneChipset>, obsidian],
+	[obsidian, plateGold, obsidian],
+	[obsidian, BCchip, obsidian],
 	[obsidian, gearDiamond, obsidian]]);
 
 recipes.remove(<BuildCraft|Silicon:laserTableBlock:3>);
 recipes.addShaped(<BuildCraft|Silicon:laserTableBlock:3>, [
 	[obsidian, plateRedAlloy, obsidian],
-	[obsidian, <BuildCraft|Silicon:redstoneChipset>, obsidian],
+	[obsidian, BCchip, obsidian],
 	[obsidian, gearGold, obsidian]]);
 
-recipes.remove(<BuildCraft|Silicon:laserTableBlock:4>);
-recipes.addShaped(<BuildCraft|Silicon:laserTableBlock:4>, [
-	[obsidian, plateRedAlloy, obsidian],
-	[obsidian, emerald, obsidian],
-	[obsidian, gearDiamond, obsidian]]);
-
-recipes.remove(<BuildCraft|Silicon:zonePlan>);
-recipes.addShaped(<BuildCraft|Silicon:zonePlan>, [
-	[plateIron, plateRedAlloy, plateIron],
-	[gearGold, map, gearGold],
-	[plateIron, gearDiamond, plateIron]]);
-
-recipes.remove(<BuildCraft|Silicon:requester>);
-recipes.addShaped(<BuildCraft|Silicon:requester>, [
-	[plateIron, piston, plateIron],
-	[gearIron, chest, gearIron],
-	[plateIron, plateRedAlloy, plateIron]]);
-
-recipes.remove(<BuildCraft|Silicon:redstone_board>);
-recipes.addShaped(<BuildCraft|Silicon:redstone_board>, [
-	[paper, paper, paper],
-	[paper, plateRedAlloy, paper],
-	[paper, paper, paper]]);
-
-recipes.remove(<BuildCraft|Silicon:robot>);
-recipes.addShaped(<BuildCraft|Silicon:robot>, [
-	[plateIron, plateIron, plateIron],
-	[plateIron, <BuildCraft|Silicon:redstoneCrystal>, plateIron],
-	[<BuildCraft|Silicon:redstoneChipset:3>, null, <BuildCraft|Silicon:redstoneChipset:3>]]);
-
-recipes.remove(<BuildCraft|Transport:robotStation>);
-recipes.addShaped(<BuildCraft|Transport:robotStation>, [
+recipes.remove(<BuildCraft|Silicon:packagerBlock>);
+recipes.addShaped(<BuildCraft|Silicon:packagerBlock>, [
 	[null, plateIron, null],
-	[plateIron, <BuildCraft|Silicon:redstoneChipset:2>, plateIron]]);
+	[plateIron, craftingWorkBench, plateIron],
+	[null, piston, null]]);
 
 recipes.removeShaped(<BuildCraft|Transport:item.buildcraftPipe.pipeitemsiron>);
 recipes.addShaped(<BuildCraft|Transport:item.buildcraftPipe.pipeitemsiron> * 8, [
@@ -181,14 +205,3 @@ recipes.addShapeless(<BuildCraft|Transport:item.buildcraftPipe.pipepoweremerald>
 recipes.removeShapeless(<BuildCraft|Transport:item.buildcraftPipe.pipepowersandstone>);
 recipes.addShapeless(<BuildCraft|Transport:item.buildcraftPipe.pipepowersandstone>, [
 	plateRedAlloy, <BuildCraft|Transport:item.buildcraftPipe.pipeitemssandstone>]);
-	
-recipes.remove(<BuildCraft|Builders:blueprintItem>);
-recipes.addShaped(<BuildCraft|Builders:blueprintItem>, [
-	[paper, paper, paper],
-	[paper, dyeBlue, paper],
-	[paper, paper, paper]]);
-
-recipes.remove(<BuildCraft|Builders:markerBlock>);
-recipes.addShaped(<BuildCraft|Builders:markerBlock>, [
-	[dyeBlue, null, null],
-	[rtorch, null, null]]);
