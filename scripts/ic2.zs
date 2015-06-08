@@ -20,14 +20,15 @@ var wireTin = <ore:craftingWireTin>;
 var wireCopper = <ore:craftingWireCopper>;
 var wireGold = <ore:craftingWireGold>;
 var wireIron = <ore:craftingWireIron>;
-var ic2Cable1 = <IC2:itemCable:1>;
-var ic2Cable2 = <IC2:itemCable:2>;
-var ic2Cable5 = <IC2:itemCable:5>;
-var ic2Cable10 = <IC2:itemCable:10>;
+var ic2cableCopper = <IC2:itemCable:1>;
+var ic2cableGold = <IC2:itemCable:2>;
+var ic2cableIron = <IC2:itemCable:5>;
+var ic2cableTin = <IC2:itemCable:10>;
 var ic2coil = <IC2:itemRecipePart>;
 var ic2motor = <IC2:itemRecipePart:1>;
 var ic2BMCasing = <IC2:blockMachine>;
 var ic2coolant = <IC2:reactorCoolantSimple>;
+var ic2reactorvessel = <IC2:blockreactorvessel>;
 var reactorHeatSwitch = <IC2:reactorHeatSwitch>;
 var craftingToolWireCutter = <ore:craftingToolWireCutter>;
 var plateTin = <ore:plateTin>;
@@ -39,28 +40,29 @@ var plateRedAlloy = <ore:plateRedAlloy>;
 var plateLapis = <ore:plateLapis>;
 var plateLazurite = <ore:plateLazurite>;
 var plateSodalite = <ore:plateSodalite>;
+var plateAlloyAdvanced = <ore:plateAlloyAdvanced>;
 
 var GtSolarPanel = <gregtech:gt.metaitem.01:32750>;
 var ic2SolarPanel = <IC2:blockGenerator:3>;
 var wireGt01Copper = <ore:wireGt01Copper>;
 
 #oredict
-<ore:wireGt01Tin>.add(ic2Cable10);
-<ore:wireGt01Copper>.add(ic2Cable1);
-<ore:wireGt01Gold>.add(ic2Cable2);
+<ore:wireGt01Tin>.add(ic2cableTin);
+<ore:wireGt01Copper>.add(ic2cableCopper);
+<ore:wireGt01Gold>.add(ic2cableGold);
 
 # Recipe Fixes
-recipes.remove(ic2Cable1);
-recipes.addShaped(ic2Cable1, [[craftingToolWireCutter, plateCopper, null]]);
+recipes.remove(ic2cableCopper);
+recipes.addShaped(ic2cableCopper, [[craftingToolWireCutter, plateCopper, null]]);
 
-recipes.remove(ic2Cable2);
-recipes.addShaped(ic2Cable2, [[craftingToolWireCutter, plateGold, null]]);
+recipes.remove(ic2cableGold);
+recipes.addShaped(ic2cableGold, [[craftingToolWireCutter, plateGold, null]]);
 
-recipes.remove(ic2Cable5);
-recipes.addShaped(ic2Cable5, [[craftingToolWireCutter, plateIron, null]]);
+recipes.remove(ic2cableIron);
+recipes.addShaped(ic2cableIron, [[craftingToolWireCutter, plateIron, null]]);
 
-recipes.remove(ic2Cable10);
-recipes.addShaped(ic2Cable10, [[craftingToolWireCutter, plateTin, null]]);
+recipes.remove(ic2cableTin);
+recipes.addShaped(ic2cableTin, [[craftingToolWireCutter, plateTin, null]]);
 
 recipes.remove(ic2SolarPanel);
 recipes.addShaped(ic2SolarPanel, [[GtSolarPanel]]);
@@ -291,3 +293,15 @@ recipes.addShaped(<IC2:reactorHeatSwitchDiamond>, [
 	[plateSodalite, circuitBasic, plateSodalite],
 	[reactorHeatSwitch, plateCopper, reactorHeatSwitch],
 	[plateSodalite, circuitBasic, plateSodalite]]);
+
+recipes.remove(<IC2:blockReactorRedstonePort>);
+recipes.addShaped(<IC2:blockReactorRedstonePort>, [
+	[ic2reactorvessel, ic2reactorvessel, ic2reactorvessel],
+	[ic2reactorvessel, plateRedAlloy, ic2reactorvessel],
+	[ic2reactorvessel, ic2reactorvessel, ic2reactorvessel]]);
+
+recipes.remove(<IC2:itemToolMiningLaser>);
+recipes.addShaped(<IC2:itemToolMiningLaser>, [
+	[plateRedAlloy, plateRedAlloy, batteryElite],
+	[plateAlloyAdvanced, plateAlloyAdvanced, circuitAdvanced],
+	[null, <IC2:itemTurningBlanks:274978>, plateAlloyAdvanced]]);

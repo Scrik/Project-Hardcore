@@ -1,5 +1,15 @@
-Version Hystory
+Changelog
 ===============
+
+1.2:
+Scripts:
+some ic2 scripts added/rewrited
+
+Mods:
+Buildcraft updated to buildcraft-7.0.8.jar
+Buildcraft Compat updated to buildcraft-compat-7.0.7.jar
+
+
 
 1.1:
 Scripts:
