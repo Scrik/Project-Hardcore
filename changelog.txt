@@ -1,6 +1,15 @@
 Changelog
 ===============
 
+1.3:
+Mods:
+Forestry updated to forestry_1.7.10-3.6.0.584-unstable.jar
+Industrial Craft updated to industrialcraft-2-2.2.733-experimental.jar
+GraveStone updated to GraveStone-2.12.4.jar
+NEIIntegration updated to NEIIntegration-MC1.7.10-1.0.10.jar
+
+
+
 1.2:
 Scripts:
 some ic2 scripts added/rewrited
